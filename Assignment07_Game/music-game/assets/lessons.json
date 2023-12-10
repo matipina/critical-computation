@@ -1,0 +1,32 @@
+{
+  "love": {
+    "content": "Something about love",
+    "attributes": {
+      "creativity": 0,
+      "ambition": 0,
+      "humor": 1,
+      "empathy": 1,
+      "optimism": 1
+    }
+  },
+  "art": {
+    "content": "Something about art",
+    "attributes": {
+      "creativity": 1,
+      "ambition": 1,
+      "humor": 0,
+      "empathy": 1,
+      "optimism": 0
+    }
+  },
+  "war": {
+    "content": "Something about war",
+    "attributes": {
+      "creativity": 0,
+      "ambition": 1,
+      "humor": 0,
+      "empathy": 1,
+      "optimism": -1
+    }
+  }
+}

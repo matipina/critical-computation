@@ -1,0 +1,52 @@
+{
+  "question0": {
+    "content": "What would you say to your 13 year old self?",
+    "answers": {
+      "creativity": "I bet you won’t guess who will be president next year",
+      "ambition": "For the love of god, pay attention in class",
+      "humor": "F*ck you",
+      "empathy": "It gets better",
+      "optimism": "You’ll be taller than you think"
+    }
+  },
+  "question1": {
+    "content": "Where would you go for a romantic first date?",
+    "answers": {
+      "humor": "Graveyard",
+      "optimism": "Bathroom",
+      "ambition": "City Hall",
+      "empathy": "Park",
+      "creativity": "Museum"
+    }
+  },
+  "question2": {
+    "content": "Pick a dessert",
+    "answers": {
+      "ambition": "Steak",
+      "humor": "Sahara",
+      "creativity": "Peanut butter and jelly ice cream sundae with little sparkles on top",
+      "empathy": "Creme Brulee",
+      "optimism": "Tiramisu"
+    }
+  },
+  "question3": {
+    "content": "What’s your favorite season?",
+    "answers": {
+      "ambition": "Season 3",
+      "humor": "Paprika",
+      "empathy": "Fall",
+      "creativity": "Summer",
+      "optimism": "Spring"
+    }
+  },
+  "question4": {
+    "content": "What is worse?",
+    "answers": {
+      "creativity": "US healthcare",
+      "optimism": "Cauliflower",
+      "ambition": "Monarchies",
+      "empathy": "Discrimination",
+      "humor": "Hitting your pinky toe on the corner of a table"
+    }
+  }
+}

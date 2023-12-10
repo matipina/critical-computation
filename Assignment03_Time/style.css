@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+body{
+  background-color: rgb(19, 22, 38);
+}
+
+div{
+  font-weight:100;
+}
+
+.valueDisplay{
+  color: #f7bd8f;
+  margin-left: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:100;
+}
