@@ -1,18 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Matías Piña | CC Portfolio</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sketch</title>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    <!-- import the webpage's javascript file -->
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
+    <script src="script.js" defer></script>
+    <script src="sketch.js"></script>
+
   </head>
 
   <body>
-    <script src="sketch.js"></script>
+    <!-- navigation menu -->
+    <nav></nav>
+    
+    <!-- main content -->
+    <main>
+      <!-- 1. give your project  a titile -->
+
+      <h1>Lost and Found: Is This Your Guitar?</h1>
+
+      <!-- 2. embed your p5 sketch -->
+
+      <div id="sketch">
+        <div id="ui"></div>
+      </div>
+
+      <!-- 3. write a short description to describe what the work is about -->
+      <h1>Description and reflection</h1>
+      
+      <p>
+        My partner, Prakhar, described to me the guitar that he once lost. It was an
+        acoustic guitar, whith it's body of a very light brown. The guitar was symetrical 
+        and had a rounded shape. He described it using simple language and he didn't give me
+        many details, probably due to the fact that most people are familiar with the way that 
+        an acoustic guitar looks like, so previouls knowledge was assumed. 
+        
+        Based on the idea of lost objects and the way that we remember them in ways
+        that usually are not very accurate, I wanted to create not <strong>one</strong> guitar,
+        but <strong>as many as them as posible</strong>, making multiple variations of one 
+        design, with the hopes of helping Prakhar, and whoever is currently reading this,
+        to find their own unique guitar.
+        
+      </p>
+
+      <!-- 4. reflection -->
+
+      <h1>Design Process</h1>
+
+      <p>
+        I began using only rectangles to sketch my idea. The goal was simple: make a generic guitar.
+      </p>
+
+      <div>
+        <img
+          src="https://cdn.glitch.global/c4cd17e4-56b9-4fb7-9921-c7dcd8a2f6a2/download%20(1).png?v=1694759339806"
+        />
+      </div>
+      
+      <p>
+        But as I made progress and completed my first sketch, I inmediately realized that I really
+        didn't like the way that the guitar would look if I represent it using a rectangle.
+      </p>
+
+      <div class="fullwidth">
+        <img
+          src="https://cdn.glitch.global/c4cd17e4-56b9-4fb7-9921-c7dcd8a2f6a2/download%20(2).png?v=1694759347272"
+        />
+      </div>
+
+      <p>
+        For that reason, I decided to challenge myself and use bezier curves to make the body of the guitar
+        look more realistic. These kind of curves (and curves in general in p5.js) are hard to work with,
+        since they are not very intuitive, so this was probably the hardest part of the process. I created
+        a couple of auxiliary functions (buttons for grid and anchor points) that would help me understand the 
+        way that these curves worked. A few mistakes while doing these actually ended up looking pretty interesting.
+           
+      <div class="fullwidth">
+        <img
+          src="https://cdn.glitch.global/c4cd17e4-56b9-4fb7-9921-c7dcd8a2f6a2/mistake01.png?v=1694759358810"
+        />
+      </div>
+      
+      <div class="fullwidth">
+        <img
+          src="https://cdn.glitch.global/c4cd17e4-56b9-4fb7-9921-c7dcd8a2f6a2/mistake2.png?v=1694759363222"
+        />
+      </div>
+      
+      Finally, I coded a guitar editor using sliders to control the different anchor points that gave the guitar's 
+      body its shape.
+      
+      All that was left was to randomize the creation of these guitars. Also, at the end, a few lucky errors allowed
+      me to include a couple of fun features ;)
+      </p>
+
+
+    </main>
   </body>
 </html>
