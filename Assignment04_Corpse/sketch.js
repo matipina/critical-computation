@@ -1,4 +1,5 @@
 let canvas;
+let canvasContainer;
 let sourceVideo;
 let displayVideo;
 
@@ -51,6 +52,7 @@ let sketch = function (p) {
   };
 
   p.setup = function () {
+    canvasContainer = document.getElementById("canvas");
     p.frameRate(60);
 
     let constraints = {
@@ -67,12 +69,16 @@ let sketch = function (p) {
     displayVideo = p.createCapture(constraints);
 
     displayVideo.style("z-index: 1");
-    displayVideo.position(0, 0);
+    displayVideo.parent(canvasContainer);
+    displayVideo.hide();
+    //displayVideo.position(0, 0);
     facemesh = ml5.facemesh(displayVideo, p.modelLoaded);
 
     canvas = p.createCanvas(4 * size, 3 * size);
     canvas.style("z-index: 2");
-    canvas.position(0, 0);
+    //canvas.position(0, 0);
+    canvas.parent(canvasContainer);
+
     p.pixelDensity(1);
 
     facemesh.on("face", (results) => {

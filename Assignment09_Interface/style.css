@@ -1,20 +1,3 @@
-/* Reset margin and padding for html and body */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Ensure canvas takes up the full width */
-canvas {
-  display: block;
-}
-
-/* Add some top margin to the container */
-body #main {
-  margin-top: 60px; 
-  margin-left: 240px;
-}
-
 button {
   font-family: 'SF Mono';
 }

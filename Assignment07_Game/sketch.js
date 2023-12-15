@@ -141,7 +141,7 @@ function setup() {
   startButton = createToggle("Start", windowWidth / 2 - 100, 580, 200, 100);
   skipButton = createButton(
     "Next",
-    windowWidth - buttonW - 40,
+    buttonW,
     200,
     buttonW,
     buttonH

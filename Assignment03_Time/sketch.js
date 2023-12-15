@@ -18,6 +18,8 @@ let playing = false;
 let musicPlaying = false;
 let music;
 let density = 66;
+let canvas;
+let canvasContainer;
 
 
 function drawSphere(x, y, z, radius, color){
@@ -57,7 +59,10 @@ function getType(chance) {
 
 
 function setup(){
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  canvasContainer = document.getElementById("canvas");
+  canvas = createCanvas(windowWidth - 266, 800, WEBGL);
+  canvas.parent(canvasContainer);
+
   angleMode(DEGREES);
 
   r = width/4;
@@ -97,8 +102,8 @@ function draw(){
   orbitControl(4, 4);//Mouse control
   push();
   fill(255);
-  text('Chile', 0, -500);
-  text('September, 1973', 0, -460);
+  text('Chile', 0, -450);
+  text('September, 1973', 0, -410);
   pop()
   rotateY(-30);
   rotateZ(-90);

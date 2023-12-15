@@ -24,6 +24,8 @@ const neckColors = [
 var showGrid = false;
 var showAnchors = false;
 let canvas;
+let canvasContainer;
+let uiContainer;
 
 function randomizeColor(colorOptions) {
   return colorOptions[Math.floor(Math.random() * colorOptions.length)];
@@ -111,40 +113,30 @@ function getX(y, m, x0, y0) {
 }
 
 function createButtons(container) {
-  gridButton = createButton("Show Grid");
-  gridButton.parent(container);
-  gridButton.position(10, 10, "relative");
-  gridButton.mousePressed(changeGridVisibility);
-
-  anchorButton = createButton("Show Anchors");
-  anchorButton.parent(container);
-  anchorButton.position(10, 430, "relative");
-  anchorButton.mousePressed(changeAnchorsVisibility);
-
   boringButton = createButton("Boring Mode (default)");
   boringButton.parent(container);
-  boringButton.position(410, 10, "relative");
+  //boringButton.position(410, 10, "relative");
   boringButton.mousePressed(function () {
     changeBlendMode(BLEND);
   });
 
   addButton = createButton("Additive Mode");
   addButton.parent(container);
-  addButton.position(410, 40, "relative");
+  //addButton.position(410, 40, "relative");
   addButton.mousePressed(function () {
     changeBlendMode(DARKEST);
   });
 
   addButton = createButton("Weird Mode");
   addButton.parent(container);
-  addButton.position(410, 70, "relative");
+  //addButton.position(410, 70, "relative");
   addButton.mousePressed(function () {
     changeBlendMode(SOFT_LIGHT);
   });
 
   addButton = createButton("LSD Mode (WARNING)");
   addButton.parent(container);
-  addButton.position(410, 100, 'relative');
+  //addButton.position(410, 100, 'relative');
   addButton.mousePressed(function () {
     changeBlendMode(DIFFERENCE);
   });
@@ -244,8 +236,9 @@ function guitarNeck(startX, startY, neckWidth, neckHeight, offset, neckColor) {
 }
 
 function setup() {
-  let canvasContainer = document.getElementById("sketch");
-  canvas = createCanvas(400, 400);
+  canvasContainer = document.getElementById("canvas");
+  uiContainer = document.getElementById("ui");
+  canvas = createCanvas(windowWidth - 266, 400);
   canvas.parent(canvasContainer);
   blendMode(BLEND);
   // blendMode(DARKEST); //collage mode
@@ -253,57 +246,61 @@ function setup() {
   // blendMode(SOFT_LIGHT); // weird mode
   angleMode(DEGREES);
 
+  randomButton = createButton("Next Guitar");
+  randomButton.parent(canvasContainer);
+  //randomButton.position(10, 10, 'static');
+
   startXSlider = createSlider(0, width, width / 2);
   startXSlider.parent(canvasContainer);
-  startXSlider.position(400, -400, 'static');
-  startXSlider.style("width", "100px");
+  //startXSlider.position(400, -400, 'static');
+  //startXSlider.style("width", "100px");
 
   startYSlider = createSlider(50, 250, 184);
   startYSlider.parent(canvasContainer);
-  startYSlider.position(400, -400, 'relative');
-  startYSlider.style("width", "100px");
+  //startYSlider.position(400, -400, 'relative');
+  //startYSlider.style("width", "100px");
 
   topAnchorWidthSlider = createSlider(0, width, 138);
   topAnchorWidthSlider.parent(canvasContainer);
-  topAnchorWidthSlider.position(300, -380, 'relative');
-  topAnchorWidthSlider.style("width", "100px");
+  //topAnchorWidthSlider.position(300, -380, 'relative');
+  //topAnchorWidthSlider.style("width", "100px");
 
   topAnchorYSlider = createSlider(0, height, 185);
   topAnchorYSlider.parent(canvasContainer);
-  topAnchorYSlider.position(520, 310, 'relative');
-  topAnchorYSlider.style("width", "100px");
+  //topAnchorYSlider.position(520, 310, 'relative');
+  //topAnchorYSlider.style("width", "100px");
 
   topWidthSlider = createSlider(-100, 80, -23);
   topWidthSlider.parent(canvasContainer);
-  topWidthSlider.position(410, 330, 'relative');
-  topWidthSlider.style("width", "100px");
+  //topWidthSlider.position(410, 330, 'relative');
+  //topWidthSlider.style("width", "100px");
 
   topYSlider = createSlider(0, height, 225);
   topYSlider.parent(canvasContainer);
-  topYSlider.position(520, 330, 'relative');
-  topYSlider.style("width", "100px");
+  //topYSlider.position(520, 330, 'relative');
+  //topYSlider.style("width", "100px");
 
   endAnchorWidthSlider = createSlider(0, width, 173);
-  endAnchorWidthSlider.position(410, 350, 'relative');
-  endAnchorWidthSlider.style("width", "100px");
+  endAnchorWidthSlider.parent(canvasContainer);
+  //endAnchorWidthSlider.position(410, 350, 'relative');
+  //endAnchorWidthSlider.style("width", "100px");
 
   bottomWidthSlider = createSlider(0, 220, 51);
-  bottomWidthSlider.position(410, 370, 'relative');
-  bottomWidthSlider.style("width", "100px");
+  bottomWidthSlider.parent(canvasContainer);
+  //bottomWidthSlider.position(410, 370, 'relative');
+  //bottomWidthSlider.style("width", "100px");
 
   bottomYSlider = createSlider(0, height, 264);
-  bottomYSlider.position(520, 370, 'relative');
-  bottomYSlider.style("width", "100px");
+  bottomYSlider.parent(canvasContainer);
+  //bottomYSlider.position(520, 370, 'relative');
+  //bottomYSlider.style("width", "100px");
 
   endAnchorYSlider = createSlider(0, 600, 412);
-  endAnchorYSlider.position(520, 390, 'relative');
-  endAnchorYSlider.style("width", "100px");
+  endAnchorYSlider.parent(canvasContainer);
+  //endAnchorYSlider.position(520, 390, 'relative');
+  //endAnchorYSlider.style("width", "100px");
 
-  randomButton = createButton("Next Guitar");
-  randomButton.parent(canvasContainer);
-  randomButton.position(10, 10, "relative");
-
-  createButtons(canvasContainer);
+  createButtons(uiContainer);
 }
 
 function getBackgroundColor(guitarColor, mode) {
@@ -363,7 +360,6 @@ function draw() {
   var bottomWidth = bottomWidthSlider.value();
 
   //randomButton = createButton("Next Guitar");
-  randomButton.position(10, 10);
   randomButton.mousePressed(function () {
     updateSlider(startYSlider, random(165, 218));
     updateSlider(topAnchorWidthSlider, random(100, 180));

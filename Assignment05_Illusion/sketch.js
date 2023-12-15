@@ -12,6 +12,8 @@ let nSlider;
 let polySynth;
 let statusArray;
 let nextIn;
+let canvas;
+let canvasContainer;
 
 function equation(t, i, n, period) {
   return (1 / 2) * sin(PI * (i / n - 1 / 2) + (t / period) * 2 * PI) + 1 / 2;
@@ -24,8 +26,9 @@ function coolLine(x1, y1, x2, y2) {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  //nSlider = createSlider(1, 20, 1, 1);
+  canvasContainer = document.getElementById("canvas");
+  canvas = createCanvas(windowWidth - 266, 600);
+  canvas.parent(canvasContainer);
 }
 
 function draw() {
@@ -34,7 +37,7 @@ function draw() {
   time = millis() / 1000;
   //n = nSlider.value();
   push();
-  translate(width / 2, height / 4);
+  translate(width / 2, 100);
   fill(255);
   ellipse(x, h / 2, radius);
   for (let i = 0; i < n; i++) {
