@@ -24,7 +24,7 @@ var shapeButton;
 let colorPicker;
 var paint;
 
-var vScale = 18;
+var vScale = 8;
 var shape = 0;
 var nShapes = 1;
 var nModes = 2;

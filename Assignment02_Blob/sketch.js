@@ -16,6 +16,8 @@ let zoff = 0;
 let zoffRate = 0.01;
 let angryLevel = 0;
 let tries = 0
+let canvas;
+let canvasContainer;
 
 function getAvg(values) {
     return values.reduce((m, x, i) => m + (x - m) / (i + 1), 0)
@@ -24,7 +26,10 @@ function getAvg(values) {
 function setup() {
   textFont('Trebuchet MS');
 
-  createCanvas(400, 400);
+  canvasContainer = document.getElementById("canvas");
+
+  canvas = createCanvas(windowWidth - 266, 600);
+  canvas.parent(canvasContainer);
   // Define background colors
   c1 = color(95, 205, 217);
   c2 = color(24, 191, 157);
@@ -87,37 +92,36 @@ function draw() {
   drawFace(centerX, centerY);
 
   push();
-  textSize(20);
-  fill(222, 239, 231);
+  textSize(40);
+  fill(255);
   textAlign(CENTER, CENTER);
   
   if (angryLevel===0) {
     if (tries <3) {
-      text("Hi! I'm Blobby, nice to meet you!", 10, -100);
+      text("Hi! I'm Blobby, nice to meet you!", 10, -200);
     } else {
-      text("Yeah, yeah, I'm Blobby, whatever.", 10, -100);
+      text("Yeah, yeah, I'm Blobby, whatever.", 10, -200);
     }
     
-    textSize(10);
+    textSize(18);
     if (tries===0) {
-      text("(please don't touch the keyboard <3)", 10, 100);
+      text("(please don't touch the keyboard <3)", 10, 200);
     } else if (tries < 3) {
-      text("(please, don't touch the keyboard. I'm watching you.)", 10, 100);
+      text("(please, don't touch the keyboard. I'm watching you.)", 10, 200);
     } else {
       text("Why do I keep trying?", 10, 100);
     }
   } else if (angryLevel===1) {
     text("Ok, maybe I wasn't clear.", 10, -100);
-    textSize(20);
-    text("(please, please, \ndon't touch the keyboard)", 10, 110);
+    textSize(42);
+    text("(please, please, \ndon't touch the keyboard)", 10, 210);
   } else if (angryLevel===2) {
-    text("Now you're just being annoying.", 10, -100);
-    textSize(25);
-    text("DON'T. TOUCH. \nTHE. KEYBOARD.", 10, 120);
+    text("Now you're just being annoying.", 10, -200);
+    textSize(46);
+    text("DON'T. TOUCH. \nTHE. KEYBOARD.", 10, 220);
   } else if (angryLevel===3) {
-    textSize(25);
+    textSize(56);
     text("HOW MANY TIMES DO I HAVE\n TO TELL YOU I CAN'T BELIEVE YOU KEPT\n TOUCHING IT YOU HUMANS ARE ALL\n THE SAME", 10, -100);
-    textSize(25);
     text("HOW DUMB DO YOU HAVE TO\n BE IT'S A SIMPLE INSTRUCTION\n AND YOU CANNOT EVEN\n DO THAT YOU USELESS PIECE OF\n", 10, 130);
   }
   pop();

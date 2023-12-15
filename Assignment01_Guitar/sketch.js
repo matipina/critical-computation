@@ -253,8 +253,6 @@ function setup() {
   // blendMode(SOFT_LIGHT); // weird mode
   angleMode(DEGREES);
 
-  const startValues = [width / 2, 184, 138, 185, -23, 225, 173, 51, 264, 412];
-
   startXSlider = createSlider(0, width, width / 2);
   startXSlider.parent(canvasContainer);
   startXSlider.position(400, -400, 'static');
