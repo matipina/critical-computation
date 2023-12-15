@@ -150,9 +150,10 @@ let sketch = function (p) {
 
     if (!uiStatus) {
       yesButton = p.createButton(" Yes ");
+      yesButton.style("font-family", "SF Mono");
       yesButton.style("font-size", "17px");
       yesButton.style("background-color", col);
-      yesButton.position(x + 140, y + 110);
+      yesButton.position(x, y + 350);
       yesButton.mousePressed(() => {
         consent = true;
         yesButton.hide();
@@ -162,29 +163,31 @@ let sketch = function (p) {
       noButton = p.createButton(" No ");
       noButton.style("font-size", "17px");
       noButton.style("background-color", col);
-      noButton.position(x + 230, y + 110);
+      noButton.position(x+150, y+350);
       noButton.mousePressed(() => {
         if (noCounts === 3) {
-          yesButton.style("font-size", "26px");
-          noButton.style("font-size", "14px");
+          yesButton.style("font-family", "SF Mono");
+          yesButton.style("font-size", "22px");
+          noButton.style("font-size", "10px");
         } else if (noCounts > 4) {
           noButton.position(
-            p.mouseX + 230 + p.random(50, 100) * (Math.random() < 0.5 ? -1 : 1),
-            y + 110 + p.random(50, 100)
+            p.mouseX + 100 + p.random(50, 100) * (Math.random() < 0.5 ? -1 : 1),
+            y + p.random(50, 100)
           );
         }
         noCounts += 1;
       });
     }
 
-    let deltaX = p.mouseX + 240 - noButton.x;
-    let deltaY = p.mouseY + 60 - noButton.y;
+    let deltaX = p.mouseX + 30 - noButton.x;
+    let deltaY = p.mouseY + 280 - noButton.y;
     let buttonDistance = p.dist(
-      p.mouseX + 240,
-      p.mouseY + 60,
+      p.mouseX + 30,
+      p.mouseY + 280,
       noButton.x,
       noButton.y
     );
+    console.log(buttonDistance);
     let angle = p.atan2(deltaY, deltaX);
 
     if (noCounts > 8) {
@@ -192,7 +195,7 @@ let sketch = function (p) {
       let forceX = repulsionStrength * p.cos(angle);
       let forceY = repulsionStrength * p.sin(angle);
 
-      if (buttonDistance < 80) {
+      if (buttonDistance < 120) {
         console.log("forceX: ", forceX);
         console.log("forceY: ", forceY);
         // Apply the force to the object

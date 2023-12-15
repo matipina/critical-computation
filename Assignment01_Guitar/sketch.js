@@ -246,58 +246,65 @@ function setup() {
   // blendMode(SOFT_LIGHT); // weird mode
   angleMode(DEGREES);
 
+  let buttonContainer = document.getElementById("guitarbutton");
   randomButton = createButton("Next Guitar");
-  randomButton.parent(canvasContainer);
-  //randomButton.position(10, 10, 'static');
+  randomButton.parent(buttonContainer);
+  randomButton.position(10, 10, 'relative');
+
+  let slidersContainer1 = document.getElementById("sliders1");
+  let slidersContainer2 = document.getElementById("sliders2");
+  let slidersContainer3 = document.getElementById("sliders3");
+  let slidersContainer4 = document.getElementById("sliders4");
+  let slidersContainer5 = document.getElementById("sliders5");
 
   startXSlider = createSlider(0, width, width / 2);
-  startXSlider.parent(canvasContainer);
-  //startXSlider.position(400, -400, 'static');
+  startXSlider.parent(slidersContainer1);
+  startXSlider.position(900, 10, 'relative');
   //startXSlider.style("width", "100px");
 
   startYSlider = createSlider(50, 250, 184);
-  startYSlider.parent(canvasContainer);
-  //startYSlider.position(400, -400, 'relative');
+  startYSlider.parent(slidersContainer1);
+  startYSlider.position(900, 10, 'relative');
   //startYSlider.style("width", "100px");
 
   topAnchorWidthSlider = createSlider(0, width, 138);
-  topAnchorWidthSlider.parent(canvasContainer);
-  //topAnchorWidthSlider.position(300, -380, 'relative');
+  topAnchorWidthSlider.parent(slidersContainer2);
+  topAnchorWidthSlider.position(900, 40, 'relative');
   //topAnchorWidthSlider.style("width", "100px");
 
   topAnchorYSlider = createSlider(0, height, 185);
-  topAnchorYSlider.parent(canvasContainer);
-  //topAnchorYSlider.position(520, 310, 'relative');
+  topAnchorYSlider.parent(slidersContainer2);
+  topAnchorYSlider.position(900, 40, 'relative');
   //topAnchorYSlider.style("width", "100px");
 
   topWidthSlider = createSlider(-100, 80, -23);
-  topWidthSlider.parent(canvasContainer);
-  //topWidthSlider.position(410, 330, 'relative');
+  topWidthSlider.parent(slidersContainer3);
+  topWidthSlider.position(900, 70, 'relative');
   //topWidthSlider.style("width", "100px");
 
   topYSlider = createSlider(0, height, 225);
-  topYSlider.parent(canvasContainer);
-  //topYSlider.position(520, 330, 'relative');
+  topYSlider.parent(slidersContainer3);
+  topYSlider.position(900, 70, 'relative');
   //topYSlider.style("width", "100px");
 
   endAnchorWidthSlider = createSlider(0, width, 173);
-  endAnchorWidthSlider.parent(canvasContainer);
-  //endAnchorWidthSlider.position(410, 350, 'relative');
+  endAnchorWidthSlider.parent(slidersContainer4);
+  endAnchorWidthSlider.position(900, 100, 'relative');
   //endAnchorWidthSlider.style("width", "100px");
 
   bottomWidthSlider = createSlider(0, 220, 51);
-  bottomWidthSlider.parent(canvasContainer);
-  //bottomWidthSlider.position(410, 370, 'relative');
+  bottomWidthSlider.parent(slidersContainer4);
+  bottomWidthSlider.position(900, 100, 'relative');
   //bottomWidthSlider.style("width", "100px");
 
   bottomYSlider = createSlider(0, height, 264);
-  bottomYSlider.parent(canvasContainer);
-  //bottomYSlider.position(520, 370, 'relative');
+  bottomYSlider.parent(slidersContainer5);
+  bottomYSlider.position(900, 130, 'relative');
   //bottomYSlider.style("width", "100px");
 
   endAnchorYSlider = createSlider(0, 600, 412);
-  endAnchorYSlider.parent(canvasContainer);
-  //endAnchorYSlider.position(520, 390, 'relative');
+  endAnchorYSlider.parent(slidersContainer5);
+  endAnchorYSlider.position(900, 130, 'relative');
   //endAnchorYSlider.style("width", "100px");
 
   createButtons(uiContainer);

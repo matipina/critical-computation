@@ -5,11 +5,11 @@ let r = 0;
 let thetaMaxValue;
 
 let ballTheta = 0;
-let thetaRate = 0.06;
+let thetaRate = 0.04;
 let ballAlpha = 255;
 let balls = [];
 let runSecs;
-let numBalls = 120;
+let numBalls = 100;
 let waitTime = 45;
 let txt;
 let font;
@@ -26,7 +26,7 @@ function drawSphere(x, y, z, radius, color){
   push(); // enter local coordinate system
   stroke(color);
   translate(x, y, z);
-  sphere(radius, 10);
+  sphere(radius, 8);
   pop(); // exit local coordinate system (back to global coordinates)
 }
 
@@ -84,8 +84,7 @@ function setup(){
       color(160, 30, 22, 255)// Color
     );
   }
-
-  stroke('#3D81BF');
+  stroke(19, 22, 38);
   strokeWeight(1);
   noFill();
 
@@ -97,16 +96,17 @@ function setup(){
 
 function draw(){
   runSecs = frameCount/frameRate();
-  background(19, 22, 38);
+  background('#3D81BF');
 
-  orbitControl(4, 4);//Mouse control
+  orbitControl(4, 4, 1, {freeRotation: false});//Mouse control
   push();
   fill(255);
-  text('Chile', 0, -450);
-  text('September, 1973', 0, -410);
+  text('Chile', 0, -360);
+  text('September, 1973', 0, -320);
   pop()
   rotateY(-30);
   rotateZ(-90);
+  scale(0.8, 0.8, 0.8);
 
   if (millis()/1000 > 70) {
     if (musicPlaying === false) {
